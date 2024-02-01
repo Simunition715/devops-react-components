@@ -1,0 +1,13 @@
+// ${ComponentName}.tsx
+import React from 'react';
+import './${ComponentName}.scss';
+
+const ${ComponentName}: React.FC = () => {
+  return (
+    <div className="${componentName}">
+      {/* Your component code here */}
+    </div>
+  );
+};
+
+export default ${ComponentName};

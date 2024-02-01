@@ -1,0 +1,4 @@
+// ${ComponentName}.scss
+.${componentName} {
+  /* Your component styles here */
+}

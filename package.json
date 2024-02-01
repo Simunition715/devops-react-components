@@ -1,0 +1,11 @@
+{
+  "name": "devops-react-components",
+  "version": "1.0.0",
+  "description": "DevOps repository for managing React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simunition715",
+  "license": "ISC"
+}
