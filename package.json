@@ -1,10 +1,10 @@
 {
   "name": "devops-react-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DevOps repository for managing React components",
   "main": "index.js",
   "bin": {
-    "create-component": "./scripts/create-component.js" 
+    "create-component": "./scripts/create-component.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
