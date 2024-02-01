@@ -1,6 +1,6 @@
 {
   "name": "devops-react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DevOps repository for managing React components",
   "main": "index.js",
   "scripts": {
