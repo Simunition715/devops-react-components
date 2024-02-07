@@ -1,8 +1,5 @@
-const createComponentScript = require('./scripts/create-component');
+import createComponent from './scripts/create-component';
 
-const createReactComponent = (componentName) => {
-    console.log(`Creating React component: ${componentName}`);
-    createComponentScript();  // Call the script here
-};
+createComponent();
 
-module.exports = createReactComponent;
+module.exports = createComponent;
