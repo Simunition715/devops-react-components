@@ -1,9 +1,11 @@
-# devops-react-components
-DevOps repository for managing React components
-Usage:
-Copy the devops directory into your existing project.
-Run the create-component.sh script from the terminal.
+# React Component Creator
 
-Copy the devops directory into your existing project.
-Run the create-component.sh script from the terminal.
-This script prompts you for a component name, creates a new directory for the component, and generates the necessary TypeScript and SCSS files based on the provided templates. Feel free to customize the script or templates according to your project's needs.
+This script allows you to quickly create a new React component in your project.
+
+## Usage
+
+1. Add as a devDependency: "devops-react-components": "github:simunition715/devops-react-components"
+2. Create a script in package.json: "create-component": "node ./node_modules/devops-react-components/devops/scripts/create-component.js"
+3. Run the script using Node.js by executing the following command: npm run create-component
+4. Enter a name of the component formatted as you would manually such as Button/Input etc...
+5. Your new component will be located in ./src/components/<component name> and will include a .tsx/.scss file
