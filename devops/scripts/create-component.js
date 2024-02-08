@@ -10,9 +10,10 @@ function createComponent() {
 
   // Prompt user for component name
   rl.question("Enter the name of the new React component: ", (componentName) => {
-    const componentPath = path.join(__dirname, 'src', 'components', componentName);
+    const componentPath = path.join(process.cwd(), 'src', 'components', componentName); // Modified path to project root
     const tsxFilePath = path.join(componentPath, `${componentName}.tsx`);
     const scssFilePath = path.join(componentPath, `${componentName}.scss`);
+    const templateDir = path.join(__dirname, '..', '..', '..', 'devops-react-components', 'devops', 'templates');
 
     // Check if the component already exists
     if (fs.existsSync(tsxFilePath) || fs.existsSync(scssFilePath)) {
@@ -25,12 +26,12 @@ function createComponent() {
     fs.mkdirSync(componentPath, { recursive: true });
 
     // Copy and replace placeholders in templates
-    fs.copyFileSync(path.join(__dirname, 'devops', 'templates', 'component.tsx.template'), tsxFilePath);
-    fs.copyFileSync(path.join(__dirname, 'devops', 'templates', 'component.scss.template'), scssFilePath);
+    fs.copyFileSync(path.join(templateDir, 'component.tsx.template'), tsxFilePath);
+    fs.copyFileSync(path.join(templateDir, 'component.scss.template'), scssFilePath);
 
     // Replace placeholders with actual component name
-    replacePlaceholder(tsxFilePath, '{{ComponentName}}', componentName);
-    replacePlaceholder(scssFilePath, '{{ComponentName}}', componentName);
+    replacePlaceholder(tsxFilePath, "${componentName}", componentName);
+    replacePlaceholder(scssFilePath, "${componentName}", componentName);
 
     console.log(`React component '${componentName}' created successfully at '${componentPath}'.`);
     rl.close();
@@ -39,8 +40,10 @@ function createComponent() {
 
 function replacePlaceholder(filePath, placeholder, replacement) {
   const content = fs.readFileSync(filePath, 'utf-8');
-  const updatedContent = content.replace(new RegExp(placeholder, 'g'), replacement);
+  const escapedPlaceholder = placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape special characters
+  const updatedContent = content.replace(new RegExp(escapedPlaceholder, 'g'), replacement);
   fs.writeFileSync(filePath, updatedContent, 'utf-8');
 }
 
-export default createComponent;
+
+createComponent();
