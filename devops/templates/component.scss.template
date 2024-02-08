@@ -1,4 +1,4 @@
-// ${ComponentName}.scss
+// ${componentName}.scss
 .${componentName} {
   /* Your component styles here */
 }
