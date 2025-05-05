@@ -2,7 +2,7 @@
 
 This script allows you to quickly create a new React component in your project.
 
-## Usage
+## How to use
 
 1. Add as a devDependency: "devops-react-components": "github:simunition715/devops-react-components"
 2. Create a script in package.json: "create-component": "node ./node_modules/devops-react-components/devops/scripts/create-component.js"
